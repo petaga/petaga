@@ -1,7 +1,3 @@
-Petaga
-======
-The code that makes Petaga tick.
-
 ## Spec
 ### Switching to Git
 - Use of Git and Github is important for expansion and collaboration from the community and potential employees
@@ -12,12 +8,11 @@ The code that makes Petaga tick.
 
 ### Solution
 - Uses Github and maintains security:
-- Frontend
-  - Can be simple Javascript
-  - None/very few embedded PHP & MySQL calls (better for security)
-  - **Open** for forks and contributions through Github
-- Backend
-  - Traditional MySQL and PHP
-  - Receives API calls
-  - **Secure** code that is developed privately and not shared
 
+| Frontend | Backend |
+| -------- | ------- |
+| Can be simple Javascript | Traditional MySQL and PHP |
+| None/very few embedded PHP & MySQL calls (better for security) | Receives API calls |
+| **Open** for forks and contributions through Github | **Secure** code that is developed privately and not shared |
+  
+### New structure
