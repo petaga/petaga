@@ -10,6 +10,7 @@ This section is intended to give very general background information and to func
 
 ### Solution
 Uses GitHub and maintains security:
+
 | Frontend | Backend |
 | -------- | ------- |
 | Can be simple Javascript | Traditional MySQL and PHP |
