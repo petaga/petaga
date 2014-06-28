@@ -23,7 +23,7 @@ Note that the terms frontend and backend are being used very loosely here to mak
 1. User submits a request to the frontend by visiting a page.
 2. Static resources (Stylesheets, scripts, images) are pulled in as the page loads either from the frontend or from a separate CDN.
 3. Through JavaScript, the page submits an XMLHttpRequest to the backend which will return relevant requested data.
-4. PHP (or another language) code processes the API call and talks to the database and gets the data.
+4. PHP code (or code in any other language) processes the API call, talks to the database, and gets the data.
 5. PHP code returns JSON data to the frontend to be digested by a callback function and shown to the user.
 
 ### Advantages of this structure
