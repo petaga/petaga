@@ -1,1 +1,1 @@
-TEST
+http://www.railstutorial.org/book/beginning#sec-version_control
