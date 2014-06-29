@@ -1,3 +1,17 @@
+#Petaga
+The code that makes Petaga tick
+
+## Build Instructions
+You will need to install Mustache first in order to render the templates, like this:
+```
+gem install mustache
+```
+`git clone` this repository and `cd` into it; then run the server and build script. The ampersand is optional, leave it out if you want verbose output of all requests. If you leave it in, python will run in the background and you will need to `kill` the process manually.
+```
+python -m SimpleHTTPServer&
+./build.sh
+```
+
 ## Spec
 This section is intended to give very general background information and to function as a guide to start development on the re-writing of this project. In it are the general concepts that will help us get started.
 
@@ -45,14 +59,3 @@ Note that the terms frontend and backend are being used very loosely here to mak
 - Backend (Data Model)
   - Python and PostgreSQL which will return JSON-formatted data to the view.
   - Stores images and relevant data which can be retrieved by Python
-  
-## Build Instructions
-You will need to install Mustache first in order to render the templates, like this:
-```
-gem install mustache
-```
-`git clone` this repository and `cd` into it; then run the server and build script. The ampersand is optional, leave it out if you want verbose output of all requests. If you leave it in, python will run in the background and you will need to `kill` the process manually.
-```
-python -m SimpleHTTPServer&
-./build.sh
-```
