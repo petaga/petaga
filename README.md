@@ -21,6 +21,7 @@ This section is intended to give very general background information and to func
   - Exposure of database passwords, as the current system uses PHP with MySQL passwords listed as plaintext
   - Code propriety and risk of theft/out-competition
   - Security holes are open and exposed
+- Learning to use Git: http://www.railstutorial.org/book/beginning#sec-version_control
 
 ### Solution
 Uses GitHub and maintains security:
