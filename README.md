@@ -34,3 +34,14 @@ Note that the terms frontend and backend are being used very loosely here to mak
   - To access the Administration panel of the webapp, credentials are required to be sent to the backend (non-open-source) side where verification takes place
 - Forks of the frontend code are essentially required to use our API unless they construct their own from scratch.
   - All distinct information stored in backend
+
+### Language and structure specifics
+- Frontend (View and Controller)
+  - View generated with Mustache templating engine so that logic is mostly separate and things can be changed easily
+  - Starting with Boilerplate and Bootstrap for default CSS and JavaScript
+  - Static resources such as CSS and non-changing images are pulled from the frontend
+  - A single JavaScript file controls logic and defines functions
+  - Rewrite engine TBD
+- Backend (Data Model)
+  - Python and PostgreSQL which will return JSON-formatted data to the view.
+  - Stores images and relevant data which can be retrieved by Python
