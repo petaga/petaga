@@ -52,10 +52,10 @@ Note that the terms frontend and backend are being used very loosely here to mak
 
 ### Language and structure specifics
 - Frontend (View and Controller)
-  - View generated with Mustache templating engine so that logic is mostly separate and things can be changed easily
+  - Primary view, built from basic partials, generated with compiled Mustache templating engine so that logic is mostly separate and things can be changed easily
   - Starting with Boilerplate and Bootstrap for default CSS and JavaScript
   - Static resources such as CSS and non-changing images are pulled from the frontend
-  - A single JavaScript file controls logic and defines functions
+  - A single JavaScript file controls logic and defines functions; client-side mustache templates may be used for this
   - Rewrite engine TBD
 - Backend (Data Model)
   - Python and PostgreSQL which will return JSON-formatted data to the view.
