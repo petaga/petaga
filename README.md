@@ -58,5 +58,44 @@ Note that the terms frontend and backend are being used very loosely here to mak
   - A single JavaScript file controls logic and defines functions; client-side mustache templates may be used for this
   - Rewrite engine TBD
 - Backend (Data Model)
-  - Python and PostgreSQL which will return JSON-formatted data to the view.
+  - Python and PostgreSQL (or PHP and MySQL, it doesn't matter much) which will return JSON-formatted data to the view.
   - Stores images and relevant data which can be retrieved by Python
+
+## Code Documentation
+Documentation outlining the intricacies of our own custom implementation of Mustache.
+
+### Where, how, and why Mustache is used
+- **Where**
+  - Both in pre-rendered templates and on the client side
+- **How**
+  - Templates are pre-rendered for the sole purpose of including partials. No complex or dynamic views should be included here.
+  - Dynamic data retrieved from the API/backend is included client-side. Read the next section for details.
+- **Why**
+  - Mustache is used to help us separate logic from views, thereby helping create cleaner, more modular, and more maintenance-friendly code.
+
+### Syntax for pre-rendering versus client-side
+You are probably used to the normal Mustache syntax, like this:
+```
+{{#data}}
+  <li>{{title}}</li>
+{{/data}}
+```
+Presumably the above code would be wrapped in a list and would iterate through an array or object named `data` returning each `title`. But it is not possible with regular Mustache to do the sort of pre-rendering and client-side rendering we need, so the above code would be applicable _only_ during pre-rendering by build.sh. And at any rate, iterating through this kind of data may very well involve data that comes from the backend, and pre-rendering wouldn't make sense for a dynamic view. The only kind of information to render with pre-rendered Mustache would be that which is static and will probably not change. Therefore the most common directives in the mustache templates will probably be partials, similar to these:
+```
+{{> header }}
+  <h1>Our great page title</h1>
+  <p>A little more to tell you what it's all about. The rest of the page's body content goes here. The markup has clearly been over-simplified!</p>
+{{> footer }}
+```
+Revisiting the first example, again it is much better to pull data from our server and render on the client-side like this:
+```
+<div class="view" data-template="test1">
+  <ul>
+    [[#data]]
+    <li>[[title]]</li>
+    [[/data]]
+  </ul>
+</div>
+```
+Note especially that the content to be rendered is placed into the document surrounded by a `div.view` and that where curly braces (mustaches?) would have been used, brackets are used instead. Documentation is coming soon on the `data-template` attribute.
+

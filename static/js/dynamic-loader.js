@@ -1,6 +1,3 @@
-var templates = {
-  "test1": "<ul>{{#data}}<li>{{title}}</li>{{/data}}</ul>"
-};
 // Sample, not a 2d array
 var data = {data: [
   	{ "firstname": "Ray",
@@ -20,8 +17,9 @@ var data = {data: [
 ]};
 $(document).ready(function(){
   $('.view').each(function(i, obj){
-    id = $(obj).attr("id");
-    var compiled = Mustache.to_html(templates[id], data);
+    dataTemplate = $(obj).attr("data-template");
+    parseIn = $(obj).html().replace(/\[\[/g,"{{").replace(/\]\]/g,"}}");
+    var compiled = Mustache.to_html(parseIn, data);
     $(obj).html(compiled);
   });
 });
