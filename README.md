@@ -11,6 +11,12 @@ gem install mustache
 python -m SimpleHTTPServer&
 ./build.sh
 ```
+### For backend testing
+For testing of the PHP (for now) backend, which is not available through GitHub for security reasons, create (or download the working copy of) a folder separate from the front-end repository and run the following command, provided you have PHP ≥5.4.0:
+```
+php -S localhost:<PORT>
+```
+Be sure to replace `<PORT>` with a port other than standard reserved ports or 8000, which is used by the Python server for the frontend. This section will be more complete in a few days.
 
 ## Spec
 This section is intended to give very general background information and to function as a guide to start development on the re-writing of this project. In it are the general concepts that will help us get started.
