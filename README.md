@@ -1,4 +1,4 @@
-#Petaga
+# Petaga
 The code that makes Petaga tick
 
 ## Build Instructions
