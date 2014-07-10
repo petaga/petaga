@@ -1,4 +1,3 @@
-// Sample, not a 2d array
 var data = {data: [
   	{ "firstname": "Ray",
   		"lastname": "Villalobos",
@@ -11,6 +10,13 @@ var data = {data: [
   		"lastname": "Winslow",
   		"category": "Front End",
   		"title": "Swag & Good Grades",
+  		"image": "http://placehold.it/400",
+  		"link": "http://samwinslow.me/",
+  	},
+  	{ "firstname": "Andy",
+  		"lastname": "Plaisted",
+  		"category": "Front End",
+  		"title": "Awesome things @ Morgan Stanley",
   		"image": "http://placehold.it/400",
   		"link": "http://samwinslow.me/",
   	}
