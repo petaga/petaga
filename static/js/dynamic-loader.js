@@ -4,13 +4,15 @@ $(document).ready(function(){
     requestURL = "http://localhost/petaga-backend/request.php?template="+dataTemplate;
     parseIn = $(obj).html().replace(/\[\[/g,"{{").replace(/\]\]/g,"}}");
     $.ajax({
-      url:requestURL,
-      dataType: 'jsonp',
-      success:function(json){
+      type: 'GET',
+      url: requestURL,
+      contentType: 'text/plain',
+      dataType: 'json',
+      success: function(json){
         var compiled = Mustache.to_html(parseIn, json);
         $(obj).html(compiled);
       },
-      error:function(){
+      error: function(){
         console.log("JSON error");
       }
     });
